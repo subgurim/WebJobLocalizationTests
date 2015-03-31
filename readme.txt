@@ -14,6 +14,4 @@ You only need to clone it, execute the console project to check the correct beha
 
 I've attached some screenshots (https://github.com/subgurim/WebJobLocalizationTests/tree/master/WebJobLocalizationTests/Screenshots)
 
-As far as I can see, the culture directories aren't copied when using git.
-
 Thanks!
