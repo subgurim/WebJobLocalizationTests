@@ -197,7 +197,7 @@ Copyright (C) Microsoft Corporation. All rights reserved..
              Condition="'$(BuildingProject)' == 'false'" />
 
     <ItemGroup>
-      <FilesToPublish Include="$(OutputPath)*.*" Exclude="$(OutputPath)$(AssemblyName).vshost.*"/>
+      <FilesToPublish Include="$(OutputPath)**\*.*" Exclude="$(OutputPath)$(AssemblyName).vshost.*"/>
     </ItemGroup>
 
     <ItemGroup>

@@ -16,6 +16,10 @@ namespace WebJobLocalizationTests
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("es-ES");
             Console.WriteLine(Resource.HelloWorld);
 
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("fr-FR");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr-FR");
+            Console.WriteLine(Resource.HelloWorld);
+
             Console.ReadLine();
         }
     }
