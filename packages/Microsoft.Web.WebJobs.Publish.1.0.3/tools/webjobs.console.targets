@@ -205,8 +205,14 @@ Copyright (C) Microsoft Corporation. All rights reserved..
       <WebJobProjectOutputs Include="%(FilesToPublish.FullPath)"/>
     </ItemGroup>-->
 	
-	<ItemGroup>
-  <WebJobProjectOutputs Include="$(OutputPath)**\*.*" Exclude="$(OutputPath)$(AssemblyName).vshost.*"/>
+<ItemGroup>
+  <FilesToPublish Include="$(OutputPath)**\*.*" Exclude="$(OutputPath)$(AssemblyName).vshost.*"/>
+</ItemGroup>
+
+<ItemGroup>
+  <WebJobProjectOutputs Include="%(FilesToPublish.FullPath)">
+      <TargetPath>%(RecursiveDir)%(Filename)%(Extension)</TargetPath>
+  </WebJobProjectOutputs>
 </ItemGroup>
     
     <Message Text="WebJobs: Output files for publishing (WebJobProjectOutputs) [@(WebJobProjectOutputs->'%(Identity): TargetPath=[%(TargetPath)]','%0a%0d')]" 
