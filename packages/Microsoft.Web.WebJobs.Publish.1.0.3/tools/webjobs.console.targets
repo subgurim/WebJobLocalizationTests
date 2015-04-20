@@ -196,16 +196,18 @@ Copyright (C) Microsoft Corporation. All rights reserved..
              Properties="Configuration=$(Configuration);DeployOnBuild=$(DeployWebJobOnBuild);BuildingInsideVisualStudio=false"
              Condition="'$(BuildingProject)' == 'false'" />
 
-   <!-- <ItemGroup>
+			 <!--
+    <ItemGroup>
       <FilesToPublish Include="$(OutputPath)**\*.*" Exclude="$(OutputPath)$(AssemblyName).vshost.*"/>
     </ItemGroup>
 
     <ItemGroup>
       <WebJobProjectOutputs Include="%(FilesToPublish.FullPath)"/>
     </ItemGroup>-->
+	
 	<ItemGroup>
-	  <WebJobProjectOutputs Include="$(OutputPath)**\*.*" Exclude="$(OutputPath)$(AssemblyName).vshost.*"/>
-	</ItemGroup>	
+  <WebJobProjectOutputs Include="$(OutputPath)**\*.*" Exclude="$(OutputPath)$(AssemblyName).vshost.*"/>
+</ItemGroup>
     
     <Message Text="WebJobs: Output files for publishing (WebJobProjectOutputs) [@(WebJobProjectOutputs->'%(Identity): TargetPath=[%(TargetPath)]','%0a%0d')]" 
              Importance="low"/>
